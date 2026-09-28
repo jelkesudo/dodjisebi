@@ -1,0 +1,218 @@
+/* PROCESS - FULL APPLE STYLE, NO IMAGE */
+.process-scene {
+    height: 315dvh;
+    background: var(--wine2)
+}
+
+.process-stage {
+    background: var(--wine2);
+    color: #fff
+}
+
+.process-stage:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 80% 20%, #8f3b4a55, transparent 34%), radial-gradient(circle at 20% 80%, #bc8c6c25, transparent 36%)
+}
+
+.process-orbit {
+    position: absolute;
+    border: 1px solid #ffffff17;
+    border-radius: 50%;
+    will-change: transform
+}
+
+.orbit-a {
+    width: 70vw;
+    height: 70vw;
+    right: -20vw;
+    top: -24vw;
+    transform: scale(calc(.78 + var(--p)*.45)) rotate(calc(var(--p)*55deg))
+}
+
+.orbit-b {
+    width: 43vw;
+    height: 43vw;
+    left: -10vw;
+    bottom: -17vw;
+    transform: scale(calc(1.2 - var(--p)*.32)) rotate(calc(var(--p)*-40deg))
+}
+
+.process-number {
+    position: absolute;
+    right: 5vw;
+    bottom: -7vh;
+    font: 500 26vw/.8 'Playfair Display';
+    color: #ffffff08;
+    letter-spacing: -.08em;
+    transform: translateX(calc(var(--p)*-5vw))
+}
+
+.process-progress {
+    position: absolute;
+    z-index: 30;
+    right: 24px;
+    top: 50%;
+    height: 220px;
+    width: 2px;
+    background: #ffffff22;
+    transform: translateY(-50%)
+}
+
+.process-progress i {
+    display: block;
+    width: 100%;
+    height: calc(var(--p)*100%);
+    background: #fff
+}
+
+.process-panel {
+    position: absolute;
+    z-index: 5;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    padding: 110px 7vw 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    will-change: opacity, transform;
+    background-clip: border-box
+}
+
+.process-panel h2 {
+    font-size: clamp(58px, 7vw, 108px);
+    line-height: .92;
+    margin: 16px 0 32px;
+    letter-spacing: -.035em
+}
+
+.process-panel h2 em {
+    color: #d9aa87;
+    font-weight: 500
+}
+
+.process-panel .intro {
+    font-size: clamp(17px, 1.6vw, 24px);
+    line-height: 1.6;
+    max-width: 680px;
+    color: #eaded9
+}
+
+.panel-a {
+    opacity: var(--a);
+    transform: translate3d(0, calc((1 - var(--a))*10vh), 0) scale(calc(.96 + var(--a)*.04))
+}
+
+.panel-b {
+    opacity: var(--b);
+    transform: translate3d(calc((1 - var(--b))*5vw), 0, 0);
+    background: #f4ece5;
+    color: var(--ink)
+}
+
+.panel-c {
+    opacity: var(--c);
+    transform: translate3d(calc((1 - var(--c))*-5vw), 0, 0);
+    background: linear-gradient(120deg, #f7f3ee 0%, #ead9cc 100%);
+    color: var(--ink)
+}
+
+.panel-d {
+    opacity: var(--d);
+    transform: scale(calc(.86 + var(--d)*.14));
+    align-items: center;
+    text-align: center;
+    background: var(--wine);
+    color: #fff
+}
+
+.feelings-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    max-width: 1400px;
+    border-top: 1px solid #ffffff33;
+    margin-top: 28px
+}
+
+.feeling-card {
+    padding: 28px 22px 10px;
+    border-right: 1px solid #ffffff25;
+    min-height: 190px
+}
+
+.feeling-card span {
+    font: italic 38px 'Playfair Display';
+    color: #d8a785
+}
+
+.feeling-card p {
+    line-height: 1.55
+}
+
+.statement-stack {
+    display: flex;
+    flex-direction: column;
+    width: min(1180px, 86vw)
+}
+
+.statement-stack span {
+    display: block;
+    width: 100%;
+    font: 500 clamp(40px, 5vw, 76px)/1.15 'Playfair Display';
+    padding: 17px 0;
+    border-bottom: 1px solid #4a2d3030;
+    transform: translateX(calc((1 - var(--b))*8vw))
+}
+
+.statement-stack span:nth-child(2) {
+    padding-left: 8vw
+}
+
+.statement-stack span:nth-child(3) {
+    padding-left: 16vw
+}
+
+.scribble {
+    position: absolute;
+    right: 8vw;
+    bottom: 10vh;
+    font: italic clamp(20px, 2.3vw, 36px) 'Playfair Display';
+    color: #9a725e;
+    transform: rotate(-4deg)
+}
+
+.accept-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    width: min(1050px, 82vw);
+    background: #cdbfb633;
+    border: 1px solid #cdbfb633
+}
+
+.accept-list div {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    padding: 22px;
+    background: #fff9
+}
+
+.accept-list svg {
+    color: var(--wine)
+}
+
+.final-line {
+    font: italic clamp(32px, 4vw, 60px) 'Playfair Display';
+    color: #dcb89d;
+    margin: 0
+}
+
+.final-spark {
+    width: 55px;
+    height: 55px;
+    margin-top: 34px;
+    color: #dcb89d
+}

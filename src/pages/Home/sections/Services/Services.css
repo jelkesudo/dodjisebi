@@ -1,0 +1,128 @@
+/* SERVICES STACK */
+.services-scene {
+    height: 295dvh;
+    background: var(--paper)
+}
+
+.services-stage {
+    background: linear-gradient(135deg, #fbf8f3, #efe4dc)
+}
+
+.services-title {
+    position: absolute;
+    left: 7vw;
+    top: 13vh;
+    z-index: 10;
+    max-width: 800px
+}
+
+.services-title h2 {
+    font-size: clamp(55px, 6.7vw, 100px);
+    line-height: .94;
+    letter-spacing: -.04em;
+    margin: 14px 0
+}
+
+.services-title em {
+    color: #bd8b67;
+    font-weight: 500
+}
+
+.services-stack {
+    position: absolute;
+    right: 7vw;
+    bottom: 7vh;
+    width: min(720px, 52vw);
+    height: 58vh
+}
+
+.service-sheet {
+    position: absolute;
+    inset: 0;
+    padding: 42px 45px;
+    background: #fff;
+    border: 1px solid #dac9bd;
+    box-shadow: 0 30px 80px #48243112;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto 1fr;
+    gap: 28px;
+    align-items: start;
+    transform-origin: 50% 100%;
+    will-change: transform, opacity
+}
+
+.service-sheet>svg {
+    width: 40px;
+    height: 40px;
+    color: #9d765b;
+    grid-column: 1
+}
+
+.service-sheet>div:not(.service-index) {
+    grid-column: 2
+}
+
+.service-sheet h3 {
+    font: 500 clamp(28px, 3vw, 46px) 'Playfair Display';
+    margin: 0 0 15px;
+    text-transform: uppercase
+}
+
+.service-sheet p {
+    max-width: 420px;
+    line-height: 1.65;
+    color: #75666a;
+    margin: 0
+}
+
+.service-sheet a {
+    grid-column: 2;
+    align-self: end;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: .12em;
+    color: #835c48;
+    display: flex;
+    align-items: center;
+    gap: 9px
+}
+
+.service-index {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font: italic 52px 'Playfair Display';
+    color: #e5d7cd
+}
+
+.sheet-0 {
+    opacity: var(--card0);
+    transform: translateY(calc((1 - var(--card0)) * 65vh));
+}
+
+.sheet-1 {
+    opacity: var(--card1);
+    transform: translateY(calc((1 - var(--card1)) * 65vh));
+}
+
+.sheet-2 {
+    opacity: var(--card2);
+    transform: translateY(calc((1 - var(--card2)) * 65vh));
+}
+
+.sheet-3 {
+    opacity: var(--card3);
+    transform: translateY(calc((1 - var(--card3)) * 65vh));
+}
+
+.service-caption {
+    position: absolute;
+    left: 7vw;
+    bottom: 8vh;
+    width: 33vw;
+    font: 400 18px/1.6 'DM Sans';
+    color: #78666a;
+    border-left: 1px solid #b99982;
+    padding-left: 18px
+}

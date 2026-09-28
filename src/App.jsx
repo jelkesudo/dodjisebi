@@ -1,0 +1,2 @@
+import { useState } from 'react';import Header from './components/layout/Header/Header';import Footer from './components/layout/Footer/Footer';import ApplicationFlow from './components/application/ApplicationFlow/ApplicationFlow';import HomePage from './pages/Home/HomePage';
+export default function App(){const[applicationOpen,setApplicationOpen]=useState(false);return <><Header onApply={()=>setApplicationOpen(true)}/><HomePage onApply={()=>setApplicationOpen(true)}/><Footer/><ApplicationFlow open={applicationOpen} onClose={()=>setApplicationOpen(false)}/></>}

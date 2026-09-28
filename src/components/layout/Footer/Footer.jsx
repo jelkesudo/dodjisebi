@@ -1,0 +1,2 @@
+import './Footer.css';
+export default function Footer(){return <footer className="site-footer"><a className="footer-brand" href="#top">DOĐI SEBI</a><nav aria-label="Navigacija u podnožju"><a href="#zastani">Proces</a><a href="#rad">Radimo zajedno</a><a href="#price">Priče</a><a href="#kontakt">Kontakt</a></nav><div className="footer-meta"><span>© 2026 · Tvoj život ne treba da bude na čekanju.</span><span className="footer-legal">Privatnost · Uslovi korišćenja</span></div></footer>}
