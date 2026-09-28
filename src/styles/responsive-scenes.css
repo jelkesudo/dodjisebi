@@ -1,1 +1,74 @@
-@media(max-width:1023px){.process-panel{padding:92px 24px 36px;justify-content:flex-start}.process-panel h2{font-size:48px}.feelings-grid{grid-template-columns:1fr;overflow:auto;max-height:55vh;margin-top:10px}.feeling-card{min-height:auto;padding:14px 4px;border-right:0;border-bottom:1px solid #ffffff20}.panel-b,.panel-c{background:#f5eee8}.statement-stack{width:100%}.statement-stack span{font-size:38px}.statement-stack span:nth-child(2),.statement-stack span:nth-child(3){padding-left:0}.scribble{left:24px;right:auto;bottom:8vh}.accept-list{grid-template-columns:1fr;width:100%;max-height:54vh;overflow:auto}.process-number{font-size:50vw}.process-progress{right:8px;height:110px}.services-scene{height:340dvh}.services-title{left:24px;right:24px;top:12vh}.services-title h2{font-size:48px}.services-stack{left:24px;right:24px;bottom:10vh;width:auto;height:48vh}.service-sheet{padding:28px;grid-template-columns:auto 1fr;gap:18px}.service-sheet h3{font-size:28px}.service-sheet a{grid-column:1/-1}.service-caption{display:none}.testimonials-heading{left:24px;right:24px;top:12vh}.testimonials-heading h2{font-size:48px}.testimonial-rail{padding-left:24px;bottom:13vh;transform:translateX(calc(var(--travel)*-270vw))}.testimonial-rail blockquote{width:82vw;height:300px}.rail-line{right:24px;left:24px;width:auto;top:auto;bottom:8vh}.contact-copy{left:24px;right:24px;width:auto}.contact-copy h2{font-size:55px}.contact-big-word{font-size:25vw;right:12px;opacity:.13}.contact-note{left:24px;right:24px;text-align:left}}@media(max-width:599px){.process-panel h2,.services-title h2,.testimonials-heading h2{font-size:42px}.contact-copy h2{font-size:48px}}
+/* Responsive geometry for sticky storytelling scenes. */
+@media (max-width: 1023px) {
+  .process-scene { height: 390dvh; }
+  .process-panel { padding: max(80px, env(safe-area-inset-top)) 5vw 30px; justify-content: center; }
+  .process-panel h2 { font-size: clamp(36px, 6vw, 62px); margin: 10px 0 16px; }
+  .process-panel .intro { font-size: 15px; line-height: 1.5; }
+  .feelings-grid { grid-template-columns: repeat(2, minmax(0,1fr)); max-height: 42dvh; overflow-y: auto; overscroll-behavior: contain; margin-top: 12px; }
+  .feeling-card { min-height: 0; padding: 10px; border-bottom: 1px solid #ffffff20; }
+  .feeling-card span { font-size: 25px; }
+  .feeling-card p { margin: 6px 0; font-size: 13px; }
+  .statement-stack { width: 100%; }
+  .statement-stack span { font-size: clamp(28px, 5vw, 46px); padding: 12px 0; }
+  .statement-stack span:nth-child(2), .statement-stack span:nth-child(3) { padding-left: 0; }
+  .scribble { position: static; margin-top: 24px; font-size: 23px; }
+  .accept-list { grid-template-columns: 1fr; width: 100%; max-height: 52dvh; overflow-y: auto; overscroll-behavior: contain; }
+  .accept-list div { padding: 13px; font-size: 14px; }
+  .process-number { font-size: 45vw; }
+  .process-progress { display: none; }
+  .panel-d { justify-content: center; padding-bottom: 65px; }
+  .services-scene { height: 420dvh; }
+  .services-title { left: 5vw; right: 5vw; top: max(85px, 11dvh); }
+  .services-title h2 { font-size: clamp(37px, 6vw, 60px); }
+  .services-stack { left: 5vw; right: 5vw; bottom: 8dvh; width: auto; height: 49dvh; }
+  .service-sheet { padding: 24px; grid-template-columns: 34px minmax(0,1fr); grid-template-rows: 1fr auto; gap: 14px; overflow-y: auto; }
+  .service-sheet > svg { width: 30px; height: 30px; }
+  .service-sheet h3 { font-size: clamp(23px, 4vw, 34px); padding-right: 28px; }
+  .service-sheet a { grid-column: 1/-1; }
+  .service-caption { display: none; }
+  .testimonials-heading { left: 5vw; right: 5vw; top: 12dvh; }
+  .testimonials-heading h2 { font-size: clamp(38px, 6vw, 64px); }
+  .testimonial-rail { padding-left: 5vw; bottom: 12dvh; transform: translateX(calc(var(--travel)*-270vw)); }
+  .testimonial-rail blockquote { width: 82vw; height: min(320px, 43dvh); padding: 24px; overflow-y: auto; }
+  .testimonial-rail p { font-size: clamp(20px, 4vw, 30px); }
+  .rail-line { right: 5vw; left: 5vw; width: auto; top: auto; bottom: 7dvh; }
+  .contact-copy { left: 5vw; right: 5vw; width: auto; }
+  .contact-copy h2 { font-size: clamp(42px, 7vw, 74px); }
+  .contact-big-word { font-size: 23vw; right: 5vw; opacity: .13; }
+  .contact-note { left: 5vw; right: 5vw; bottom: 5dvh; text-align: left; font-size: 16px; }
+}
+@media (max-width: 599px) {
+  .process-scene { height: 480dvh; }
+  .process-panel { padding: 74px 20px 20px; }
+  .process-panel h2 { font-size: clamp(33px, 10vw, 45px); }
+  .feelings-grid { grid-template-columns: 1fr; max-height: min(44dvh, 340px); }
+  .feeling-card { display: flex; align-items: baseline; gap: 12px; padding: 7px 2px; }
+  .feeling-card span { flex: 0 0 32px; }
+  .feeling-card p { font-size: 13px; }
+  .statement-stack span { font-size: clamp(26px, 8vw, 37px); }
+  .accept-list { max-height: 48dvh; }
+  .services-scene { height: 500dvh; }
+  .services-title { left: 20px; right: 20px; top: 79px; }
+  .services-title h2 { font-size: clamp(34px, 10vw, 44px); }
+  .services-stack { left: 16px; right: 16px; bottom: max(25px, 5dvh); height: min(51dvh, 410px); }
+  .service-sheet { padding: 20px; grid-template-columns: 28px minmax(0, 1fr); gap: 10px; }
+  .service-sheet h3 { font-size: clamp(21px, 6.3vw, 29px); }
+  .service-sheet p { font-size: 14px; line-height: 1.45; }
+  .service-index { top: 12px; right: 14px; font-size: 38px; }
+  .testimonials-heading { left: 20px; right: 20px; top: 85px; }
+  .testimonials-heading h2 { font-size: clamp(35px, 10vw, 45px); }
+  .testimonial-rail { bottom: 13dvh; padding-left: 9vw; gap: 16px; transform: translateX(calc(var(--travel)*-290vw)); }
+  .testimonial-rail blockquote { width: 82vw; height: min(330px, 48dvh); }
+  .contact-copy { left: 20px; right: 20px; }
+  .contact-copy h2 { font-size: clamp(40px, 11vw, 56px); }
+  .contact-copy > p:not(.kicker) { font-size: 15px; line-height: 1.5; }
+  .contact-note { left: 20px; right: 20px; }
+}
+@media (max-width: 599px) and (max-height: 700px) {
+  .process-panel h2 { font-size: 33px; }
+  .process-panel .intro { font-size: 13px; }
+  .feelings-grid { max-height: 36dvh; }
+  .services-title h2 { font-size: 33px; }
+  .services-stack { height: 48dvh; bottom: 12px; }
+  .contact-copy h2 { font-size: 38px; }
+}

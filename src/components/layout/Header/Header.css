@@ -1,1 +1,6 @@
 .site-header{position:fixed;z-index:100;top:0;left:0;width:100%;height:82px;padding:0 5vw;display:flex;align-items:center;gap:38px;background:linear-gradient(#fbf8f3ee,#fbf8f3b8 70%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}.logo{font-family:var(--font-serif);font-size:22px;margin-right:auto}.logo:before{content:'✦';margin-right:12px;color:var(--gold)}.site-header nav{display:flex;gap:28px;font-size:11px;text-transform:uppercase;letter-spacing:.09em}.hamb{display:none;border:0;background:none;color:var(--wine);cursor:pointer}@media(max-width:1023px){.site-header{height:68px;padding:0 24px}.site-header nav,.site-header>.btn{display:none}.hamb{display:block}}@media(max-width:599px){.site-header{padding:0 20px}.logo{font-size:20px}}
+
+@media (max-width: 1023px) {
+  .site-header nav.is-open { display: flex; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; background: #fbf8f3; box-shadow: 0 15px 30px #321e2022; padding: 12px 24px 22px; }
+  .site-header nav.is-open a { display: block; padding: 15px 0; border-bottom: 1px solid #321e201a; }
+}

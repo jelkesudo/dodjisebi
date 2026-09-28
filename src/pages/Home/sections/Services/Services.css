@@ -98,6 +98,7 @@
 
 .sheet-0 {
     opacity: var(--card0);
+    visibility: visible;
     transform: translateY(calc((1 - var(--card0)) * 65vh));
 }
 
