@@ -4,3 +4,6 @@
   .site-header nav.is-open { display: flex; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; background: #fbf8f3; box-shadow: 0 15px 30px #321e2022; padding: 12px 24px 22px; }
   .site-header nav.is-open a { display: block; padding: 15px 0; border-bottom: 1px solid #321e201a; }
 }
+
+.header-actions{display:flex;gap:8px;align-items:center}.desktop-account{border:0;background:transparent;cursor:pointer;display:grid;place-items:center;color:var(--wine)}.mobile-account-link{display:none}
+@media(max-width:1023px){.desktop-account{display:none}.mobile-account-link{display:flex!important;align-items:center;gap:10px;width:100%;padding:15px 0;border:0;border-bottom:1px solid #321e201a;background:transparent;color:inherit;font:inherit;text-transform:uppercase;letter-spacing:.09em;cursor:pointer;text-align:left}.header-actions{margin-left:auto}.site-header .header-actions>.btn{display:inline-flex}}

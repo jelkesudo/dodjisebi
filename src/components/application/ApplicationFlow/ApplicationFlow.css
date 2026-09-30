@@ -60,7 +60,7 @@
 
 .apply-progress {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 6px;
     background: #efe5de
 }
@@ -260,3 +260,37 @@
         padding: 16px 22px
     }
 }
+.apply-description { max-width: 620px; line-height: 1.6; margin: -12px 0 30px; color: #75666a; }
+.apply-error { margin: 20px 0 0; color: #a32937; line-height: 1.5; }
+.apply-honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.apply-actions button:disabled { opacity: .6; cursor: not-allowed; }
+
+
+.apply-snackbar {
+    position: fixed;
+    left: 50%;
+    bottom: 24px;
+    transform: translateX(-50%);
+    z-index: 100000;
+    width: min(560px, calc(100vw - 32px));
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 15px 16px 15px 20px;
+    background: #2d2023;
+    color: #fff;
+    box-shadow: 0 14px 40px rgba(31, 18, 21, .22);
+    font: 500 14px var(--font-sans);
+}
+.apply-snackbar span { flex: 1; line-height: 1.45; }
+.apply-snackbar a { color: #fff; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
+.apply-snackbar button { border: 0; background: transparent; color: #fff; font-size: 22px; line-height: 1; cursor: pointer; padding: 2px 4px; }
+@media(max-width:599px) {
+    .apply-snackbar { bottom: 16px; gap: 12px; }
+}
+
+.apply-password-hint { margin: -4px 0 4px; color: #75666a; font-size: 13px; line-height: 1.5; }
+.apply-login-link { align-self: flex-start; text-decoration: none; }
+
+.apply-existing-account{margin:-14px 0 26px;color:#75666a;font-size:14px;line-height:1.5}.apply-existing-account button{border:0;background:transparent;padding:0;color:var(--wine);font:700 inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer}.apply-existing-account button:hover{opacity:.72}
+@media(max-width:599px){.apply-existing-account{margin:-10px 0 24px}.apply-modal{max-width:100vw}.apply-body{width:100%}.apply-content{width:100%;box-sizing:border-box}.apply-fields input,.apply-fields textarea{font-size:16px}.apply-turnstile{max-width:100%;overflow:hidden}.apply-actions{padding-bottom:max(16px,env(safe-area-inset-bottom))}}

@@ -1,2 +1,15 @@
-export const feelings=[['01','Brineš o svima, ali ne ostavljaš prostor za sebe.'],['02','Teško ti je da kažeš NE i postaviš granice.'],['03','Umor dolazi od toga da stalno nosiš sve na svojim leđima.'],['04','Pitaš se gde si ti u svemu što nosiš.'],['05','Želiš mir, ali ne znaš kako da ga postigneš.']];
-export const changes=['Lakše prepoznaješ svoje potrebe.','Kažeš NE bez krivice.','Manje se dokazuješ — više živiš.','Odnosi postaju mirniji.','Vraćaš energiju sebi.','Donosiš odluke iz sebe, a ne iz straha.'];
+export const feelings = [
+  ["01", "Brineš o svima, ali ne ostavljaš prostor za sebe."],
+  ["02", "Teško ti je da kažeš NE i postaviš granice."],
+  ["03", "Umor dolazi od toga da stalno nosiš sve na svojim leđima."],
+  ["04", "Pitaš se gde si ti u svemu što nosiš."],
+  ["05", "Želiš mir, ali ne znaš kako da ga postigneš."],
+];
+export const changes = [
+  "Lakše prepoznaješ svoje potrebe.",
+  "Kažeš NE bez krivice.",
+  "Manje se dokazuješ — više živiš.",
+  "Odnosi postaju mirniji.",
+  "Vraćaš energiju sebi.",
+  "Donosiš odluke iz sebe, a ne iz straha.",
+];
