@@ -3,6 +3,7 @@ import { ArrowLeft } from 'lucide-react';
 import { authService } from '../../../services/auth/authService';
 import './AuthPage.css';
 import { getErrorMessage } from '../../../services/errors/errorMessages';
+import { ButtonSpinner } from '../../../components/ui/Feedback/Feedback';
 
 function goHome() {
   window.history.pushState({}, '', '/');
@@ -70,7 +71,7 @@ export default function AuthPage() {
         {error && <p className="client-error" role="alert">{error}</p>}
         {info && <p className="client-success">{info}</p>}
         {devResetUrl && <a className="client-btn" href={devResetUrl}>Otvori lokalni reset link</a>}
-        <button className="client-btn" disabled={busy}>{busy ? 'Sačekaj...' : mode === 'login' ? 'Prijavi se' : 'Pošalji link'}</button>
+        <button className="client-btn" disabled={busy}>{busy && <ButtonSpinner/>}{busy ? 'Sačekaj...' : mode === 'login' ? 'Prijavi se' : 'Pošalji link'}</button>
       </form>
       <div className="auth-switch">
         {mode !== 'login' && <button type="button" onClick={() => switchMode('login')}>Imam nalog</button>}

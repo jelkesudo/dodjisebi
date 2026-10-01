@@ -4,6 +4,7 @@ import { authService } from '../../../services/auth/authService';
 import { getStoredSession } from '../../../services/supabase/supabaseClient';
 import '../Auth/AuthPage.css';
 import { getErrorMessage } from '../../../services/errors/errorMessages';
+import { ButtonSpinner } from '../../../components/ui/Feedback/Feedback';
 
 const PASSWORD_RULE = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,128}$/;
 
@@ -55,7 +56,7 @@ export default function ResetPasswordPage() {
         <label>Ponovi lozinku<input type="password" required minLength={8} maxLength={128} autoComplete="new-password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} /></label>
         <p className="auth-note">Najmanje 8 karaktera, veliko i malo slovo, broj i specijalni karakter.</p>
         {error && <p className="client-error" role="alert">{error}</p>}
-        <button className="client-btn" disabled={busy}>{busy ? 'Čuvanje...' : 'Sačuvaj novu lozinku'}</button>
+        <button className="client-btn" disabled={busy}>{busy && <ButtonSpinner/>}{busy ? 'Čuvanje...' : 'Sačuvaj novu lozinku'}</button>
       </form>
     </div>
   </div>;

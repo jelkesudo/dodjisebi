@@ -3,12 +3,15 @@ import ClientShell from '../../../components/client/ClientShell/ClientShell';
 import { clientPortal } from '../../../services/supabase/clientPortal';
 import { authService } from '../../../services/auth/authService';
 import { getErrorMessage } from '../../../services/errors/errorMessages';
+import { ButtonSpinner, PageLoader, useToast } from '../../../components/ui/Feedback/Feedback';
 export default function SettingsPage() {
   const [data, setData] = useState(null),
     [form, setForm] = useState({ firstName: '', lastName: '', phone: '' }),
     [password, setPassword] = useState(''),
     [msg, setMsg] = useState(''),
-    [error, setError] = useState('');
+    [error, setError] = useState(''),
+    [loading, setLoading] = useState(true), [saving, setSaving] = useState(false), [changing, setChanging] = useState(false);
+  const toast = useToast();
   useEffect(() => {
     clientPortal
       .dashboard()
@@ -20,34 +23,32 @@ export default function SettingsPage() {
           phone: d.profile?.phone || '',
         });
       })
-      .catch((e) => setError(getErrorMessage(e)));
+      .catch((e) => setError(getErrorMessage(e)))
+      .finally(() => setLoading(false));
   }, []);
   const save = async (e) => {
     e.preventDefault();
     setError('');
-    setMsg('');
+    setMsg(''); setSaving(true);
     try {
       await clientPortal.updateProfile(form);
-      setMsg('Podaci su sačuvani.');
-    } catch (e) {
-      setError(getErrorMessage(e));
-    }
+      setMsg('Podaci su sačuvani.'); toast.success('Podaci su sačuvani.');
+    } catch (e) { const m=getErrorMessage(e); setError(m); toast.error(m); } finally { setSaving(false); }
   };
   const changePass = async (e) => {
     e.preventDefault();
     setError('');
-    setMsg('');
+    setMsg(''); setChanging(true);
     try {
       if (password.length < 8) throw new Error('Lozinka mora imati najmanje 8 karaktera.');
       await authService.updatePassword(password);
       setPassword('');
-      setMsg('Lozinka je promenjena.');
-    } catch (e) {
-      setError(getErrorMessage(e));
-    }
+      setMsg('Lozinka je promenjena.'); toast.success('Lozinka je promenjena.');
+    } catch (e) { const m=getErrorMessage(e); setError(m); toast.error(m); } finally { setChanging(false); }
   };
   return (
     <ClientShell email={data?.email}>
+      {loading ? <PageLoader label="Učitavamo podešavanja..."/> : <>
       <div className="client-page-head">
         <p className="kicker">PODEŠAVANJA</p>
         <h1>Moj nalog.</h1>
@@ -89,7 +90,7 @@ export default function SettingsPage() {
               Email
               <input disabled value={data?.email || ''} />
             </label>
-            <button className="client-btn">Sačuvaj</button>
+            <button className="client-btn" disabled={saving}>{saving&&<ButtonSpinner/>}{saving?'Čuvanje...':'Sačuvaj'}</button>
           </form>
         </section>
         <section className="client-card">
@@ -106,10 +107,10 @@ export default function SettingsPage() {
                 autoComplete="new-password"
               />
             </label>
-            <button className="client-btn">Promeni lozinku</button>
+            <button className="client-btn" disabled={changing}>{changing&&<ButtonSpinner/>}{changing?'Čuvanje...':'Promeni lozinku'}</button>
           </form>
         </section>
-      </div>
+      </div></>}
     </ClientShell>
   );
 }

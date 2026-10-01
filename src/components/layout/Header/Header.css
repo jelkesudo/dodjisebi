@@ -105,7 +105,7 @@
 }
 
 .mobile-account-link {
-  display: none
+  display: flex;
 }
 
 @media(max-width:1023px) {
